@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin — Creative Art Academy 2026</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #2A2420; --terra: #E07A5F; --sage: #4A7C59;
+      --cream: #F5F5F0; --taupe: #8B7355; --white: #fff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Open Sans', sans-serif; background: #F0EFEA; color: var(--ink); min-height: 100vh; }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+      background: var(--ink); padding: 1.5rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .sidebar-logo { font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 1rem; color: white; margin-bottom: 1.5rem; }
+    .sidebar-logo span { color: var(--terra); }
+    .nav-item {
+      padding: 0.65rem 0.9rem; border-radius: 6px; cursor: pointer;
+      font-size: 0.88rem; font-weight: 600; color: rgba(255,255,255,0.65);
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-item:hover, .nav-item.active { background: rgba(224,122,95,0.15); color: var(--terra); }
+
+    /* Main */
+    .main { margin-left: 240px; padding: 2rem; }
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 2rem; padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(139,115,85,0.2);
+    }
+    .topbar h1 { font-family: 'Montserrat',sans-serif; font-size: 1.4rem; }
+    .badge { background: var(--terra); color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+
+    /* Login overlay */
+    .login-overlay {
+      position: fixed; inset: 0; background: rgba(42,36,32,0.92);
+      display: flex; align-items: center; justify-content: center; z-index: 100;
+    }
+    .login-box {
+      background: white; padding: 2.5rem; border-radius: 8px; width: 360px; max-width: 90vw;
+    }
+    .login-box h2 { font-family: 'Montserrat',sans-serif; margin-bottom: 1.5rem; }
+    .login-box input {
+      width: 100%; padding: 0.7rem; border: 1px solid #ddd; border-radius: 4px;
+      font-size: 0.95rem; margin-bottom: 0.9rem; outline: none;
+    }
+    .login-box input:focus { border-color: var(--terra); }
+    .login-box button {
+      width: 100%; padding: 0.8rem; background: var(--terra); color: white;
+      border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer;
+    }
+    .login-box button:hover { background: #c4614a; }
+    .login-error { color: var(--terra); font-size: 0.85rem; margin-top: 0.5rem; }
+
+    /* Stats cards */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.2rem; margin-bottom: 2rem; }
+    .stat-card {
+      background: white; padding: 1.4rem; border-radius: 6px;
+      border-left: 4px solid var(--terra);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .stat-card.sage { border-color: var(--sage); }
+    .stat-label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--taupe); margin-bottom: 0.4rem; }
+    .stat-value { font-family: 'Montserrat',sans-serif; font-size: 2rem; font-weight: 700; color: var(--ink); }
+
+    /* Tables */
+    .panel { background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 2rem; }
+    .panel-head { padding: 1.2rem 1.5rem; border-bottom: 1px solid #f0efe8; display: flex; justify-content: space-between; align-items: center; }
+    .panel-head h3 { font-family: 'Montserrat',sans-serif; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; }
+    th { padding: 0.7rem 1rem; text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--taupe); background: #faf9f6; border-bottom: 1px solid #f0efe8; }
+    td { padding: 0.75rem 1rem; font-size: 0.88rem; border-bottom: 1px solid #f7f6f2; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #faf9f6; }
+
+    .status { padding: 0.2rem 0.6rem; border-radius: 3px; font-size: 0.75rem; font-weight: 600; }
+    .status.paid { background: rgba(74,124,89,0.12); color: var(--sage); }
+    .status.pending { background: rgba(244,200,0,0.12); color: #a08000; }
+    .status.failed { background: rgba(224,122,95,0.12); color: var(--terra); }
+
+    .btn-sm { padding: 0.3rem 0.7rem; border-radius: 3px; font-size: 0.78rem; font-weight: 600; cursor: pointer; border: none; transition: background 0.2s; }
+    .btn-approve { background: rgba(74,124,89,0.15); color: var(--sage); }
+    .btn-approve:hover { background: var(--sage); color: white; }
+    .btn-delete { background: rgba(224,122,95,0.12); color: var(--terra); }
+    .btn-delete:hover { background: var(--terra); color: white; }
+
+    /* Hidden sections */
+    .section { display: none; }
+    .section.active { display: block; }
+
+    /* Tab indicator */
+    .tab-pills { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .tab-pill {
+      padding: 0.45rem 1rem; border-radius: 20px; font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; border: 1px solid rgba(139,115,85,0.2); color: var(--taupe);
+      transition: all 0.2s;
+    }
+    .tab-pill.active { background: var(--terra); color: white; border-color: var(--terra); }
+
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .main { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Login Overlay -->
+<div class="login-overlay" id="loginOverlay">
+  <div class="login-box">
+    <h2>Admin Login</h2>
+    <p style="font-size:0.88rem;color:#888;margin-bottom:1.2rem">Creative Art Academy 2026</p>
+    <input type="email" id="adminEmail" placeholder="Admin email" autocomplete="email"/>
+    <input type="password" id="adminPassword" placeholder="Password" autocomplete="current-password"/>
+    <button onclick="adminLogin()">Sign In</button>
+    <div class="login-error" id="loginError"></div>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-logo">CAA <span>Admin</span></div>
+  <div class="nav-item active" onclick="showSection('dashboard', this)">📊 Dashboard</div>
+  <div class="nav-item" onclick="showSection('enrollments', this)">📋 Enrollments</div>
+  <div class="nav-item" onclick="showSection('users', this)">👥 Students</div>
+  <div class="nav-item" onclick="showSection('testimonials', this)">💬 Testimonials</div>
+  <div class="nav-item" onclick="showSection('messages', this)">✉️ Messages</div>
+  <div style="flex:1"></div>
+  <div class="nav-item" onclick="logout()" style="color:rgba(255,255,255,0.4)">⬅ Logout</div>
+</nav>
+
+<!-- Main content -->
+<div class="main">
+  <div class="topbar">
+    <h1 id="pageTitle">Dashboard</h1>
+    <span class="badge">Admin</span>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="section-dashboard" class="section active">
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card"><div class="stat-label">Total Students</div><div class="stat-value" id="statStudents">—</div></div>
+      <div class="stat-card sage"><div class="stat-label">Active Classes</div><div class="stat-value" id="statClasses">—</div></div>
+      <div class="stat-card"><div class="stat-label">Paid Enrollments</div><div class="stat-value" id="statEnrollments">—</div></div>
+      <div class="stat-card sage"><div class="stat-label">Revenue (₹)</div><div class="stat-value" id="statRevenue">—</div></div>
+      <div class="stat-card"><div class="stat-label">Unread Messages</div><div class="stat-value" id="statMessages">—</div></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>Recent Enrollments</h3></div>
+      <table id="dashEnrollTable">
+        <thead><tr><th>Student</th><th>Class</th><th>Status</th><th>Date</th></tr></thead>
+        <tbody id="dashEnrollBody"><tr><td colspan="4" style="text-align:center;color:#999;padding:2rem">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Enrollments -->
+  <div id="section-enrollments" class="section">
+    <div class="panel">
+      <div class="panel-head"><h3>All Enrollments</h3></div>
+      <table>
+        <thead><tr><th>Student</th><th>Email</th><th>Class</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+        <tbody id="enrollmentsBody"><tr><td colspan="6" style="text-align:center;color:#999;padding:2rem">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Users -->
+  <div id="section-users" class="section">
+    <div class="panel">
+      <div class="panel-head"><h3>All Students</h3></div>
+      <table>
+        <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Role</th><th>Joined</th></tr></thead>
+        <tbody id="usersBody"><tr><td colspan="5" style="text-align:center;color:#999;padding:2rem">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div id="section-testimonials" class="section">
+    <div class="panel">
+      <div class="panel-head"><h3>Testimonials</h3></div>
+      <table>
+        <thead><tr><th>Author</th><th>Review</th><th>Rating</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody id="testimonialsBody"><tr><td colspan="5" style="text-align:center;color:#999;padding:2rem">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <div id="section-messages" class="section">
+    <div class="panel">
+      <div class="panel-head"><h3>Contact Messages</h3></div>
+      <table>
+        <thead><tr><th>From</th><th>Email</th><th>Subject</th><th>Message</th><th>Date</th><th>Read</th></tr></thead>
+        <tbody id="messagesBody"><tr><td colspan="6" style="text-align:center;color:#999;padding:2rem">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  let token = localStorage.getItem('caa_admin_token');
+  if (token) document.getElementById('loginOverlay').style.display = 'none';
+
+  async function adminLogin() {
+    const email = document.getElementById('adminEmail').value;
+    const password = document.getElementById('adminPassword').value;
+    const errEl = document.getElementById('loginError');
+    errEl.textContent = '';
+
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.user?.role !== 'admin') {
+        errEl.textContent = data.error || 'Invalid credentials or insufficient permissions.';
+        return;
+      }
+      token = data.token;
+      localStorage.setItem('caa_admin_token', token);
+      document.getElementById('loginOverlay').style.display = 'none';
+      loadDashboard();
+    } catch {
+      errEl.textContent = 'Login failed. Please try again.';
+    }
+  }
+
+  function logout() {
+    localStorage.removeItem('caa_admin_token');
+    location.reload();
+  }
+
+  function showSection(name, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('section-' + name).classList.add('active');
+    el.classList.add('active');
+    document.getElementById('pageTitle').textContent = el.textContent.trim().replace(/^[^\w]+/, '');
+    loadSection(name);
+  }
+
+  async function apiFetch(url) {
+    const res = await fetch(url, { headers: { Authorization: 'Bearer ' + token } });
+    if (res.status === 401) { logout(); return null; }
+    return res.json();
+  }
+
+  function fmtDate(d) { return new Date(d).toLocaleDateString('en-IN', { day:'2-digit', month:'short', year:'numeric' }); }
+  function fmtRupees(p) { return '₹' + (p / 100).toLocaleString('en-IN'); }
+
+  async function loadDashboard() {
+    const data = await apiFetch('/admin/api/stats');
+    if (!data) return;
+    document.getElementById('statStudents').textContent = data.totalStudents;
+    document.getElementById('statClasses').textContent = data.activeClasses;
+    document.getElementById('statEnrollments').textContent = data.paidEnrollments;
+    document.getElementById('statRevenue').textContent = '₹' + (data.totalRevenue/100).toLocaleString('en-IN');
+    document.getElementById('statMessages').textContent = data.unreadMessages;
+
+    // Recent enrollments
+    const eData = await apiFetch('/admin/api/enrollments');
+    if (!eData) return;
+    const recent = eData.enrollments.slice(0, 8);
+    const tbody = document.getElementById('dashEnrollBody');
+    tbody.innerHTML = recent.length ? recent.map(e => `
+      <tr>
+        <td>${e.student_name}</td>
+        <td>${e.class_title}</td>
+        <td><span class="status ${e.payment_status}">${e.payment_status}</span></td>
+        <td>${fmtDate(e.enrolled_at)}</td>
+      </tr>`).join('') : '<tr><td colspan="4" style="text-align:center;color:#999;padding:1.5rem">No enrollments yet.</td></tr>';
+  }
+
+  async function loadSection(name) {
+    if (name === 'dashboard') { loadDashboard(); return; }
+
+    if (name === 'enrollments') {
+      const data = await apiFetch('/admin/api/enrollments');
+      if (!data) return;
+      document.getElementById('enrollmentsBody').innerHTML = data.enrollments.length ? data.enrollments.map(e => `
+        <tr>
+          <td>${e.student_name}</td><td>${e.student_email}</td><td>${e.class_title}</td>
+          <td>${e.amount_paid ? fmtRupees(e.amount_paid) : '—'}</td>
+          <td><span class="status ${e.payment_status}">${e.payment_status}</span></td>
+          <td>${fmtDate(e.enrolled_at)}</td>
+        </tr>`).join('') : '<tr><td colspan="6" style="text-align:center;color:#999">No enrollments.</td></tr>';
+    }
+
+    if (name === 'users') {
+      const data = await apiFetch('/admin/api/users');
+      if (!data) return;
+      document.getElementById('usersBody').innerHTML = data.users.length ? data.users.map(u => `
+        <tr>
+          <td>${u.name}</td><td>${u.email}</td><td>${u.phone || '—'}</td>
+          <td><span class="status ${u.role === 'admin' ? 'paid' : 'pending'}">${u.role}</span></td>
+          <td>${fmtDate(u.created_at)}</td>
+        </tr>`).join('') : '<tr><td colspan="5" style="text-align:center;color:#999">No users.</td></tr>';
+    }
+
+    if (name === 'testimonials') {
+      const data = await apiFetch('/admin/api/testimonials');
+      if (!data) return;
+      document.getElementById('testimonialsBody').innerHTML = data.testimonials.length ? data.testimonials.map(t => `
+        <tr>
+          <td>${t.author_name}<br><small style="color:#999">${t.author_detail || ''}</small></td>
+          <td style="max-width:280px;white-space:normal">${t.body.substring(0,120)}…</td>
+          <td>${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}</td>
+          <td><span class="status ${t.is_approved ? 'paid' : 'pending'}">${t.is_approved ? 'approved' : 'pending'}</span></td>
+          <td>
+            ${!t.is_approved ? `<button class="btn-sm btn-approve" onclick="approveTestimonial('${t.id}')">Approve</button>` : ''}
+            <button class="btn-sm btn-delete" onclick="deleteTestimonial('${t.id}')">Delete</button>
+          </td>
+        </tr>`).join('') : '<tr><td colspan="5" style="text-align:center;color:#999">No testimonials.</td></tr>';
+    }
+
+    if (name === 'messages') {
+      const data = await apiFetch('/admin/api/messages');
+      if (!data) return;
+      document.getElementById('messagesBody').innerHTML = data.messages.length ? data.messages.map(m => `
+        <tr style="${!m.is_read ? 'font-weight:600' : ''}">
+          <td>${m.name}</td><td>${m.email}</td><td>${m.subject || '—'}</td>
+          <td style="max-width:250px;white-space:normal">${m.message.substring(0,100)}…</td>
+          <td>${fmtDate(m.created_at)}</td>
+          <td>${m.is_read ? '✓' : `<button class="btn-sm btn-approve" onclick="markRead('${m.id}')">Mark read</button>`}</td>
+        </tr>`).join('') : '<tr><td colspan="6" style="text-align:center;color:#999">No messages.</td></tr>';
+    }
+  }
+
+  async function approveTestimonial(id) {
+    await fetch(`/admin/api/testimonials/${id}/approve`, { method:'PATCH', headers:{Authorization:'Bearer '+token} });
+    loadSection('testimonials');
+  }
+  async function deleteTestimonial(id) {
+    if (!confirm('Delete this testimonial?')) return;
+    await fetch(`/admin/api/testimonials/${id}`, { method:'DELETE', headers:{Authorization:'Bearer '+token} });
+    loadSection('testimonials');
+  }
+  async function markRead(id) {
+    await fetch(`/admin/api/messages/${id}/read`, { method:'PATCH', headers:{Authorization:'Bearer '+token} });
+    loadSection('messages');
+  }
+
+  // Init
+  if (token) loadDashboard();
+</script>
+</body>
+</html>

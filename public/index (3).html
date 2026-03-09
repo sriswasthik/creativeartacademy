@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Art Academy — Art Classes in Hyderabad</title>
+
+  <!-- SEO -->
+  <meta name="description"
+    content="Creative Art Academy 2026 offers hands-on drawing, painting, and creative workshops for kids and adults in Hyderabad, India. Join us and discover joy in every stroke." />
+  <meta name="keywords"
+    content="art classes Hyderabad, drawing classes Hyderabad, painting workshops Hyderabad, kids art classes, adult painting, Creative Art Academy" />
+  <meta name="author" content="Creative Art Academy 2026" />
+  <!-- <link rel="icon" type="image/x-icon" href="public/favicon_io/favicon.ico" /> -->
+
+  <meta property="og:title" content="Creative Art Academy 2026 — Hyderabad" />
+  <meta property="og:description"
+    content="Hands-on art classes for all ages. Drawing, painting & creative workshops." />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Open+Sans:wght@400;600&family=Caveat:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <style>
+    /* ========== CSS VARIABLES ========== */
+    :root {
+      --cream: #F5F5F0;
+      --taupe: #8B7355;
+      --taupe-light: #C4AD8F;
+      --terracotta: #E07A5F;
+      --terracotta-dark: #C4614A;
+      --sage: #4A7C59;
+      --sage-light: #6fa882;
+      --ink: #2A2420;
+      --ink-light: #5C4F44;
+      --white: #FEFEFE;
+      --font-head: 'Montserrat', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+      --font-hand: 'Caveat', cursive;
+    }
+
+    /* ========== RESET & BASE ========== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink);
+      background-color: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* Subtle canvas texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+
+    /* ========== TYPOGRAPHY ========== */
+    h1 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+
+    .hand {
+      font-family: var(--font-hand);
+      font-style: italic;
+      font-size: 1.25rem;
+    }
+
+    .hand-lg {
+      font-family: var(--font-hand);
+      font-style: italic;
+      font-size: 1.55rem;
+    }
+
+    .sub-head {
+      font-family: var(--font-head);
+      font-weight: 300;
+      font-size: 1.25rem;
+      color: var(--taupe);
+    }
+
+    p {
+      color: var(--ink-light);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ========== UTILITY ========== */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-pad {
+      padding: 90px 0;
+    }
+
+    .text-terra {
+      color: var(--terracotta);
+    }
+
+    .text-sage {
+      color: var(--sage);
+    }
+
+    .text-taupe {
+      color: var(--taupe);
+    }
+
+    .section-label {
+      font-family: var(--font-hand);
+      font-size: 1.1rem;
+      color: var(--terracotta);
+      display: block;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* Wobbly underline for section titles */
+    .wobble-line {
+      display: inline-block;
+      position: relative;
+    }
+
+    .wobble-line::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--terracotta);
+      border-radius: 2px 0 3px 1px;
+      clip-path: polygon(0 50%, 3% 0%, 6% 100%, 9% 20%, 12% 80%, 15% 10%, 18% 90%, 21% 30%, 24% 70%, 27% 15%, 30% 85%, 33% 40%, 36% 60%, 39% 25%, 42% 75%, 45% 20%, 48% 80%, 51% 35%, 54% 65%, 57% 10%, 60% 90%, 63% 30%, 66% 70%, 69% 20%, 72% 80%, 75% 25%, 78% 75%, 81% 35%, 84% 65%, 87% 20%, 90% 80%, 93% 30%, 96% 50%, 100% 50%);
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.8rem;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: var(--white);
+      border-radius: 8px;
+    }
+
+    .btn-primary:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(224, 122, 95, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--terracotta);
+      border: 2px solid var(--terracotta);
+      border-radius: 0px;
+      /* intentionally square — human quirk */
+    }
+
+    .btn-outline:hover {
+      background: var(--terracotta);
+      color: var(--white);
+    }
+
+    .btn-sage {
+      background: var(--sage);
+      color: var(--white);
+      border-radius: 4px;
+    }
+
+    .btn-sage:hover {
+      background: #3a6147;
+      transform: translateY(-1px);
+    }
+
+    /* ========== NAV ========== */
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(245, 245, 240, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(139, 115, 85, 0.15);
+      transition: box-shadow 0.3s;
+    }
+
+    #nav.scrolled {
+      box-shadow: 0 2px 18px rgba(42, 36, 32, 0.1);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--ink);
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      transition: color 0.25s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--terracotta);
+      transition: width 0.25s;
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover {
+      color: var(--terracotta);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-enroll {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.82rem;
+      background: var(--terracotta);
+      color: white;
+      padding: 0.55rem 1.2rem;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+      transition: background 0.25s;
+    }
+
+    .nav-enroll:hover {
+      background: var(--terracotta-dark);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+
+      .nav-links,
+      .nav-enroll {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(245, 245, 240, 0.98);
+        padding: 1.5rem;
+        gap: 1.2rem;
+        border-bottom: 1px solid rgba(139, 115, 85, 0.15);
+      }
+    }
+
+    /* ========== HERO ========== */
+    #hero {
+      height: 80vh;
+      min-height: 520px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(160deg, rgba(42, 36, 32, 0.55) 0%, rgba(74, 124, 89, 0.25) 60%, rgba(224, 122, 95, 0.3) 100%),
+        url('/images/transpbg.jpg') center/cover no-repeat;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--white);
+      max-width: 760px;
+      padding: 0 1.5rem;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-hand);
+      font-size: 1.4rem;
+      color: rgba(245, 245, 240, 0.85);
+      margin-bottom: 0.8rem;
+      display: block;
+      animation: fadeSlideUp 0.8s ease both;
+    }
+
+    .hero-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1.1rem;
+      animation: fadeSlideUp 0.9s 0.1s ease both;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: #F4C89A;
+    }
+
+    .hero-sub {
+      font-family: var(--font-head);
+      font-weight: 300;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(245, 245, 240, 0.88);
+      margin-bottom: 2.2rem;
+      animation: fadeSlideUp 1s 0.2s ease both;
+    }
+
+    .hero-cta {
+      animation: fadeSlideUp 1.1s 0.3s ease both;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: var(--font-hand);
+      font-size: 0.9rem;
+      animation: bounce 2s infinite;
+      z-index: 2;
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(7px);
+      }
+    }
+
+    /* ========== ABOUT ========== */
+    #about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img-main {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 3px;
+      transform: rotate(-1.2deg) translate(2px, -1px);
+      /* human nudge */
+      box-shadow: 6px 10px 40px rgba(42, 36, 32, 0.14);
+    }
+
+    .about-img-accent {
+      position: absolute;
+      bottom: -28px;
+      right: -18px;
+      width: 42%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 2px;
+      transform: rotate(1.8deg);
+      box-shadow: 4px 6px 20px rgba(42, 36, 32, 0.18);
+      border: 4px solid var(--white);
+    }
+
+    .about-text {
+      padding-top: 0.5rem;
+    }
+
+    .about-text p {
+      margin-bottom: 1rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      margin-top: 3rem;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: repeating-linear-gradient(to bottom, var(--taupe-light) 0, var(--taupe-light) 5px, transparent 5px, transparent 10px);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.8rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      border: 3px solid var(--cream);
+      box-shadow: 0 0 0 2px var(--terracotta);
+    }
+
+    .timeline-year {
+      font-family: var(--font-hand);
+      font-size: 1.1rem;
+      color: var(--terracotta);
+      font-weight: 600;
+    }
+
+    .timeline-text {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+    }
+
+    /* Instructor cards */
+    .instructor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.8rem;
+      margin-top: 3rem;
+    }
+
+    .instructor-card {
+      background: var(--cream);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(139, 115, 85, 0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .instructor-card:hover {
+      transform: translateY(-4px) rotate(0.3deg);
+      box-shadow: 0 12px 32px rgba(42, 36, 32, 0.12);
+    }
+
+    .instructor-card:nth-child(2) {
+      transform: rotate(-0.5deg);
+    }
+
+    .instructor-card:nth-child(2):hover {
+      transform: translateY(-4px) rotate(0.2deg);
+    }
+
+    .instructor-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .instructor-info {
+      padding: 1rem;
+    }
+
+    .instructor-name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    .instructor-role {
+      font-family: var(--font-hand);
+      font-size: 1rem;
+      color: var(--terracotta);
+    }
+
+    .instructor-bio {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      margin: 0.4rem 0;
+    }
+
+    .instructor-fact {
+      font-size: 0.82rem;
+      background: var(--white);
+      border-left: 3px solid var(--sage);
+      padding: 0.35rem 0.6rem;
+      margin-top: 0.5rem;
+      font-family: var(--font-hand);
+      color: var(--sage);
+    }
+
+    /* ========== CLASSES ========== */
+    #classes {
+      background: var(--cream);
+    }
+
+    .classes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2.5rem;
+    }
+
+    .class-card {
+      background: var(--white);
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(139, 115, 85, 0.12);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .class-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(42, 36, 32, 0.12);
+    }
+
+    .class-card:nth-child(odd) {
+      transform: rotate(-0.3deg);
+    }
+
+    .class-card:nth-child(odd):hover {
+      transform: translateY(-5px) rotate(0.1deg);
+    }
+
+    .class-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+
+    .class-body {
+      padding: 1.2rem 1.4rem 1.4rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .class-tag {
+      font-size: 0.72rem;
+      font-family: var(--font-head);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sage);
+      background: rgba(74, 124, 89, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 0.6rem;
+    }
+
+    .class-title {
+      font-size: 1.1rem;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .class-desc {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+
+    .class-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .class-price {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--terracotta);
+    }
+
+    .class-price span {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--taupe);
+    }
+
+    /* ========== GALLERY ========== */
+    #gallery {
+      background: var(--ink);
+      padding: 90px 0;
+    }
+
+    #gallery h2 {
+      color: var(--white);
+    }
+
+    #gallery .section-label {
+      color: var(--taupe-light);
+    }
+
+    #gallery .sub-head {
+      color: var(--taupe-light);
+    }
+
+    .gallery-masonry {
+      columns: 3;
+      column-gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .gallery-masonry {
+        columns: 2;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .gallery-masonry {
+        columns: 1;
+      }
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease;
+      transform: rotate(0deg);
+    }
+
+    .gallery-item:nth-child(3n+1) img {
+      transform: rotate(0.5deg);
+    }
+
+    .gallery-item:nth-child(3n+2) img {
+      transform: rotate(-0.8deg);
+    }
+
+    .gallery-item:nth-child(3n+3) img {
+      transform: rotate(0.3deg);
+    }
+
+    .gallery-item:hover img {
+      transform: rotate(2deg) scale(1.04);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(42, 36, 32, 0.6);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-caption {
+      font-family: var(--font-hand);
+      font-size: 1rem;
+      color: var(--cream);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 8, 6, 0.92);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .lightbox.open {
+      display: flex;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .lightbox img {
+      max-width: 88vw;
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .lightbox-caption {
+      font-family: var(--font-hand);
+      font-size: 1.1rem;
+      color: var(--cream);
+      margin-top: 1rem;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.8rem;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font-head);
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 2.5rem;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .lightbox-prev {
+      left: 1.5rem;
+    }
+
+    .lightbox-next {
+      right: 1.5rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    #testimonials {
+      background: var(--cream);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.6rem;
+      margin-top: 2.5rem;
+    }
+
+    .testi-card {
+      background: var(--white);
+      padding: 1.6rem;
+      border-radius: 4px;
+      border: 1px solid rgba(139, 115, 85, 0.12);
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .testi-card:hover {
+      transform: rotate(-0.5deg) translateY(-3px);
+    }
+
+    .testi-card:nth-child(2) {
+      transform: rotate(0.6deg);
+    }
+
+    .testi-card:nth-child(2):hover {
+      transform: rotate(0.2deg) translateY(-3px);
+    }
+
+    .testi-card:nth-child(4) {
+      transform: rotate(-0.4deg);
+    }
+
+    .quote-mark {
+      font-family: var(--font-head);
+      font-size: 4rem;
+      line-height: 0.5;
+      color: var(--terracotta);
+      opacity: 0.3;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .testi-text {
+      font-family: var(--font-hand);
+      font-size: 1.1rem;
+      color: var(--ink);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .stars {
+      color: #F4A800;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.6rem;
+    }
+
+    .testi-author {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    .testi-detail {
+      font-size: 0.82rem;
+      color: var(--taupe);
+    }
+
+    /* ========== ENROLL ========== */
+    #enroll {
+      background: var(--sage);
+    }
+
+    #enroll h2 {
+      color: var(--white);
+    }
+
+    #enroll .section-label {
+      color: rgba(245, 245, 240, 0.75);
+    }
+
+    #enroll .sub-head {
+      color: rgba(245, 245, 240, 0.85);
+    }
+
+    .enroll-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .enroll-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .enroll-form-box {
+      background: rgba(245, 245, 240, 0.12);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(245, 245, 240, 0.2);
+      border-radius: 6px;
+      padding: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(245, 245, 240, 0.8);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      background: rgba(245, 245, 240, 0.15);
+      border: 1px solid rgba(245, 245, 240, 0.25);
+      border-radius: 4px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(245, 245, 240, 0.5);
+    }
+
+    .form-group select option {
+      color: var(--ink);
+      background: var(--cream);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(245, 245, 240, 0.7);
+      background: rgba(245, 245, 240, 0.2);
+    }
+
+    .form-error {
+      color: #F4C89A;
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+      display: none;
+    }
+
+    .form-error.show {
+      display: block;
+    }
+
+    .enroll-perks {
+      color: var(--cream);
+    }
+
+    .enroll-perks h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .perk-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .perk-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      margin-bottom: 0.9rem;
+      font-size: 0.95rem;
+      color: rgba(245, 245, 240, 0.9);
+    }
+
+    .perk-list li::before {
+      content: '—';
+      color: var(--terracotta);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ========== CONTACT ========== */
+    #contact {
+      background: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .map-embed {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 4px;
+      border: 1px solid rgba(139, 115, 85, 0.2);
+      overflow: hidden;
+    }
+
+    .contact-info {
+      margin-top: 1.5rem;
+    }
+
+    .contact-info-item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      margin-bottom: 1.1rem;
+    }
+
+    .contact-info-item .icon-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(224, 122, 95, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--terracotta);
+    }
+
+    .contact-info-text {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+    }
+
+    .contact-info-text strong {
+      color: var(--ink);
+      display: block;
+      font-size: 0.85rem;
+      font-family: var(--font-head);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Contact form */
+    .contact-form {
+      margin-top: 2rem;
+    }
+
+    .contact-fg input,
+    .contact-fg textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid rgba(139, 115, 85, 0.25);
+      border-radius: 4px;
+      background: var(--cream);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--ink);
+      transition: border-color 0.2s;
+      outline: none;
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-fg input:focus,
+    .contact-fg textarea:focus {
+      border-color: var(--terracotta);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--ink);
+      color: rgba(245, 245, 240, 0.75);
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .footer-brand h3 {
+      color: var(--white);
+      font-family: var(--font-head);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col ul li a {
+      font-size: 0.9rem;
+      color: rgba(245, 245, 240, 0.65);
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--terracotta);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(245, 245, 240, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(245, 245, 240, 0.7);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .footer-social a:hover {
+      background: var(--terracotta);
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(245, 245, 240, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: rgba(245, 245, 240, 0.4);
+    }
+
+    @media (max-width: 540px) {
+      .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+
+    /* ========== MODAL ========== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 8, 6, 0.75);
+      z-index: 3000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+      animation: fadeIn 0.25s;
+    }
+
+    .modal {
+      background: var(--white);
+      border-radius: 8px;
+      max-width: 480px;
+      width: 100%;
+      padding: 2.2rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--taupe);
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover {
+      color: var(--ink);
+    }
+
+    .modal h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .modal-class-info {
+      font-family: var(--font-hand);
+      color: var(--terracotta);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-fg {
+      margin-bottom: 1rem;
+    }
+
+    .modal-fg label {
+      display: block;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--taupe);
+      margin-bottom: 0.3rem;
+    }
+
+    .modal-fg input,
+    .modal-fg select {
+      width: 100%;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid rgba(139, 115, 85, 0.25);
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--ink);
+      background: var(--cream);
+      outline: none;
+    }
+
+    .modal-fg input:focus,
+    .modal-fg select:focus {
+      border-color: var(--terracotta);
+    }
+
+    .stripe-note {
+      font-size: 0.8rem;
+      color: var(--taupe);
+      text-align: center;
+      margin-top: 0.8rem;
+    }
+
+    /* ========== TOAST ========== */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--ink);
+      color: var(--white);
+      padding: 0.9rem 1.4rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      z-index: 5000;
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.35s ease;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast.success {
+      border-left: 4px solid var(--sage);
+    }
+
+    /* ========== MISC ========== */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(139, 115, 85, 0.25), transparent);
+      margin: 0;
+    }
+
+    /* Paint drip accent */
+    .drip-accent {
+      display: inline-block;
+      position: relative;
+    }
+
+    .drip-accent::after {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 14px;
+      background: var(--terracotta);
+      border-radius: 0 0 3px 3px;
+    }
+
+    .btn-whatsapp {
+      background: #25D366 !important;
+      color: white !important;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe5d !important;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+    }
+
+    /* ========== SCROLL FADE IN ========== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav id="nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <!-- Logo -->
+      <a href="#hero" class="logo" aria-label="Creative Art Academy 2026 — Home">
+        <!-- <svg class="logo-mark" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          
+          <circle cx="21" cy="20" r="19" fill="#F5F5F0" stroke="#E07A5F" stroke-width="1.5" />
+          <text x="6" y="27" font-family="Montserrat, sans-serif" font-weight="900" font-size="14"
+            fill="#2A2420">CAA</text>
+          
+          <path d="M26 32 Q26.5 38 27 40 Q27.5 42 26.5 42 Q25.5 42 25.5 40 Q25 38 26 32Z" fill="#E07A5F" />
+          <circle cx="26.5" cy="42" r="1.5" fill="#E07A5F" />
+        </svg> -->
+        <img src="/images/Logo.png" alt="Logo" width="100px">
+        <div>
+          <div style="line-height:1.1">Creative Art</div>
+          <div style="font-weight:300;font-size:0.90rem;letter-spacing:0.06em;color:var(--taupe)">Academy</div>
+        </div>
+      </a>
+
+      <!-- Links -->
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#enroll" class="nav-enroll" aria-label="Enroll now">Enroll Now</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero" aria-label="Hero section">
+    <div class="hero-bg" role="img" aria-label="Diverse group of people painting in an art studio"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">✦ Hyderabad's creative corner</span>
+      <h1 class="hero-title">Discover <em>Joy</em> in<br>Every Stroke</h1>
+      <p class="hero-sub">Fun, hands-on art classes for all ages — kids, teens &amp; adults —<br>right here in
+        Hyderabad.</p>
+      <div class="hero-cta">
+        <a href="#classes" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2rem">See Classes</a>
+        <a href="#about" class="btn btn-outline"
+          style="color:white;border-color:rgba(255,255,255,0.6);font-size:1rem;padding:0.85rem 2rem">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>scroll</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="section-pad">
+    <div class="container">
+
+      <div class="about-grid">
+        <!-- Images -->
+        <div class="about-img-wrap reveal">
+          <img class="about-img-main" src="/images/transpbg.jpg"
+            alt="Students painting in a sunlit art studio at Creative Art Academy" loading="lazy" />
+          <img class="about-img-accent" src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=400&q=80"
+            alt="Close-up of a paint palette with warm colours" loading="lazy" />
+        </div>
+
+        <!-- Text -->
+        <div class="about-text reveal reveal-delay-1">
+          <span class="section-label">Our story</span>
+          <h2 class="wobble-line">Where Paint Meets<br>Purpose</h2>
+          <br>
+          <p>The journey of Creative Art Academy began with two passionate art enthusiasts from Bhiknoor <strong>Mr.
+              Lakkapathni Bhagavan</strong> and <strong>Mr. Arupula Rahul</strong>, who studied in the same school and
+            shared a deep interest in creativity and art from a young age.</p>
+          <p>Their passion led them to pursue higher education at <em>Jawaharlal Nehru Architecture and Fine Arts
+              University (JNAFAU)</em>, Hyderabad, one of the most prestigious institutions for art and design.
+            <strong>Mr. Lakkapathni Bhagavan</strong> successfully completed his Post-Graduation at <em>JNAFAU</em>,
+            while <strong>Mr. Arupula Rahul</strong> is currently pursuing his Undergraduate studies there.</p>
+          <p>With a shared vision to inspire and guide young creative minds, they founded Creative Art Academy in
+            Shaikpet, Hyderabad. Their goal is to create a space where students can explore their imagination, develop
+            artistic skills, and build confidence in their creative journey.
+          </p>
+          <p>At <strong>Creative Art Academy</strong>, we believe that every student has the potential to create
+            something extraordinary all they need is the right guidance and inspiration.</p>
+
+          <!-- Timeline -->
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">2021</div>
+              <div class="timeline-text">Two schoolmates from Bhiknoor, Bhagavan and Rahul, discovered their shared
+                passion for art.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2022</div>
+              <div class="timeline-text">Lakkapathni Bhagavan completed his Post-Graduation at JNAFAU, Hyderabad.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2023</div>
+              <div class="timeline-text">Arupula Rahul joined JNAFAU to pursue his Undergraduate studies in Fine Arts.
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2026</div>
+              <div class="timeline-text">Founded Creative Art Academy in Shaikpet, Hyderabad to inspire and train the
+                next generation of artists.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instructors -->
+      <div style="margin-top:5rem" class="reveal">
+        <span class="section-label">The humans behind it</span>
+        <h2>Meet Your Instructors</h2>
+      </div>
+      <div class="instructor-grid">
+        <div class="instructor-card reveal reveal-delay-1">
+          <img class="instructor-photo" src="/images/BHagavan Profile.jpeg"
+            alt="Portrait of Priya Sharma, lead instructor" loading="lazy" />
+          <div class="instructor-info">
+            <div class="instructor-name">Lakapathni Bhagavan</div>
+            <div class="instructor-role">Founder &amp; Lead Instructor</div>
+            <p class="instructor-bio">10+ years of fine arts practice, <b>Post Graduation</b> from <b>JNAFAU</b>
+              <i>(Jawaharlal Nehru Architecture and Fine Arts University)</i>.
+              Specialises in watercolour and botanical illustration.
+            </p>
+            <div class="instructor-fact">✦ Quirk: paints exclusively to Carnatic classical music</div>
+          </div>
+        </div>
+        <!-- <div class="instructor-card reveal reveal-delay-2">
+          <img class="instructor-photo" src="images/BHagavan Profile.jpeg" alt="Portrait of Lakkapathini Bhagavan"
+            loading="lazy" />
+          <div class="instructor-info">
+            <div class="instructor-name">Lakkapathni Bhagavan</div>
+            <div class="instructor-role">Drawing &amp; Illustration</div>
+            <p class="instructor-bio">Former graphic novelist turned teacher. Makes every still-life assignment secretly
+              a story.</p>
+            <div class="instructor-fact">✦ Quirk: carries a sketchbook in every jacket pocket — always</div>
+          </div>
+        </div> -->
+        <div class="instructor-card reveal reveal-delay-3">
+          <img class="instructor-photo" src="/images/Rahul Profile.jpeg"
+            alt="Portrait of Meera Nair, kids art instructor" loading="lazy" />
+          <div class="instructor-info">
+            <div class="instructor-name">Arupula Rahul</div>
+            <div class="instructor-role">Kids &amp; Creative Workshops</div>
+            <p class="instructor-bio">5+ years of fine arts practice, <b>Under Graduation</b> from <b>JNAFAU</b>
+              <i>(Jawaharlal Nehru Architecture and Fine Arts University)</i>.
+              Specialises in watercolour and botanical illustration.
+            </p>
+            <div class="instructor-fact">✦ Quirk: names every classroom plant after a Mughal miniaturist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== CLASSES ========== -->
+  <section id="classes" class="section-pad">
+    <div class="container">
+      <span class="section-label">What we teach</span>
+      <h2>Classes &amp; Workshops</h2>
+      <p class="sub-head" style="margin-top:0.5rem">Small batches. Big breakthroughs.</p>
+
+      <div class="classes-grid">
+
+        <!-- Card 1 -->
+        <article class="class-card reveal">
+          <img class="class-img" src="/images/Class1.jpeg" alt="Children drawing at a colourful table" loading="lazy" />
+          <div class="class-body">
+            <span class="class-tag">Class 1–5</span>
+            <h3 class="class-title">Kids Drawing &amp; Colour...</h3>
+            <p class="class-desc">Pencil, crayon, and colour exploration for little hands. Builds observation skills
+              through play.</p>
+            <div class="class-footer">
+              <div class="class-price">₹1499 <span>/ month</span></div>
+              <button class="btn btn-primary" onclick="openModal('Kids Drawing &amp; Colour','₹500')"
+                aria-label="Enroll in Kids Drawing and Colour">Enroll Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="class-card reveal reveal-delay-1">
+          <img class="class-img" src="/images/Class5.png" alt="Adult student working on a watercolour painting"
+            loading="lazy" />
+          <div class="class-body">
+            <span class="class-tag">Class 6-8</span>
+            <h3 class="class-title">Drawing &amp; Painting...</h3>
+            <p class="class-desc">Learn washes, wet-on-wet, and layering. Perfect for beginners who have always wanted
+              to try watercolour.</p>
+            <div class="class-footer">
+              <div class="class-price">₹2499 <span>/ month</span></div>
+              <button class="btn btn-primary" onclick="openModal('Adult Watercolour','₹800')"
+                aria-label="Enroll in Adult Watercolour">Enroll Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="class-card reveal reveal-delay-2">
+          <img class="class-img" src="/images/class10.png" alt="Teen working on an acrylic canvas painting"
+            loading="lazy" />
+          <div class="class-body">
+            <span class="class-tag">Class 9-12</span>
+            <h3 class="class-title">Advanced Drawing , Shading & Painting...</h3>
+            <p class="class-desc">Bold colours, expressive compositions. Learn colour mixing and build your first
+              portfolio piece.</p>
+            <div class="class-footer">
+              <div class="class-price">₹2999 <span>/ month</span></div>
+              <button class="btn btn-primary" onclick="openModal('Teen Acrylic Studio','₹650')"
+                aria-label="Enroll in Teen Acrylic Studio">Enroll Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="class-card reveal">
+          <img class="class-img" src="/images/FineArtsLogo.png" alt="Sketching materials and sketchbook open on a desk"
+            loading="lazy" />
+          <div class="class-body">
+            <span class="class-tag">All ages</span>
+            <h3 class="class-title">Fine Arts Course...</h3>
+            <p class="class-desc">A quiet, reflective class combining drawing with writing. Build a personal visual
+              diary over four weeks.</p>
+            <div class="class-footer">
+              <div class="class-price">₹3499 <span>/ month</span></div>
+              <button class="btn btn-primary" onclick="openModal('Sketchbook Journaling','₹550')"
+                aria-label="Enroll in Sketchbook Journaling">Enroll Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <!-- <article class="class-card reveal reveal-delay-1">
+          <img class="class-img" src="https://images.unsplash.com/photo-1502781252888-9143ba7f074e?w=600&q=80"
+            alt="Mixed media artwork on a canvas" loading="lazy" />
+          <div class="class-body">
+            <span class="class-tag">Adults</span>
+            <h3 class="class-title">Mixed Media Exploration</h3>
+            <p class="class-desc">Collage, ink, texture paste, and photography. An experimental class where nothing is
+              wrong.</p>
+            <div class="class-footer">
+              <div class="class-price">₹900 <span>/ session</span></div>
+              <button class="btn btn-primary" onclick="openModal('Mixed Media Exploration','₹900')"
+                aria-label="Enroll in Mixed Media Exploration">Enroll Now</button>
+            </div>
+          </div>
+        </article> -->
+
+        <!-- Card 6 -->
+        <article class="class-card reveal reveal-delay-2">
+          <img class="class-img" src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&q=80"
+            alt="Group of people in a creative art workshop" loading="lazy" />
+          <div class="class-body">
+            <span class="class-tag">Weekend special</span>
+            <h3 class="class-title"><s>Family Creative Workshop</s></h3>
+            <p class="class-desc"><s>Parents and children paint side-by-side. Themed projects every Saturday — messy,
+                joyful, memorable.</s></p>
+            <div class="class-footer">
+              <div class="class-price">Ended <span></span></div>
+              <button class="btn btn-primary" onclick="openModal('Family Creative Workshop','₹1200')"
+                aria-label="Enroll in Family Creative Workshop"><s>Ended</s></button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== GALLERY ========== -->
+  <section id="gallery">
+    <div class="container">
+      <span class="section-label">Student work &amp; studio life</span>
+      <h2 style="color:var(--white)">The Gallery Wall</h2>
+      <p class="sub-head" style="margin-top:0.4rem">Real work from real students. Unretouched, unfiltered.</p>
+
+      <div class="gallery-masonry" role="list">
+        <!-- 15 gallery items -->
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(0)" tabindex="0"
+          aria-label="Vibrant watercolour botanical study">
+          <img src="/images/img1.jpg" alt="Vibrant watercolour botanical study" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Flower Pot — acrylic with impasto technique</span>
+          </div>
+        </div>
+        <!-- <div class="gallery-item reveal" role="listitem" onclick="openLightbox(1)" tabindex="0"
+          aria-label="Child's colourful abstract painting">
+          <img src="https://images.unsplash.com/photo-1547826039-a55c6fb6f5a8?w=600&q=80"
+            alt="Child's colourful abstract painting" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Abstract burst — age 8</span></div>
+        </div> -->
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(2)" tabindex="0"
+          aria-label="Pencil portrait sketch">
+          <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=600&q=80"
+            alt="Pencil portrait sketch" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Pencil portrait study</span></div>
+        </div>
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(3)" tabindex="0"
+          aria-label="Acrylic landscape painting">
+          <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80" alt="Acrylic landscape"
+            loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Sunset landscape — acrylic</span></div>
+        </div>
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(4)" tabindex="0"
+          aria-label="Mixed media artwork">
+          <img src="/images/img8.webp" alt="Mixed media collage artwork" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Thread Art</span></div>
+        </div>
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(5)" tabindex="0"
+          aria-label="Studio painting session">
+          <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=600&q=80"
+            alt="Studio painting session in progress" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Saturday studio session</span></div>
+        </div>
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(6)" tabindex="0"
+          aria-label="Ink brush drawing">
+          <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=600&q=80"
+            alt="Ink brush drawing of a figure" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Figure study — ink brush</span></div>
+        </div>
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(7)" tabindex="0"
+          aria-label="Colourful sketchbook page">
+          <img src="/images/imgpt.webp" alt="Open sketchbook filled with drawings" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Portrait - Pencil Sketch</span></div>
+        </div>
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(8)" tabindex="0"
+          aria-label="Still life painting in oil">
+          <img src="/images/img9.webp" alt="Still life painting of fruit in oil" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Still life — oil on canvas</span></div>
+        </div>
+        <!-- <div class="gallery-item reveal" role="listitem" onclick="openLightbox(9)" tabindex="0"
+          aria-label="Kids workshop in action">
+          <img src="https://images.unsplash.com/photo-1547226706-cd7b3b91b79d?w=600&q=80"
+            alt="Kids painting together in a workshop" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Kids workshop — Saturday</span></div>
+        </div> -->
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(10)" tabindex="0"
+          aria-label="Abstract expressionist painting">
+          <img src="/images/img3.jpg" alt="Abstract expressionist painting in blue and orange" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Portrait - Acrylic with Impasto </span></div>
+        </div>
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(11)" tabindex="0"
+          aria-label="Detailed floral illustration">
+          <img src="/images/img6.jpg" alt="Detailed floral illustration in pencil" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Still Life</span></div>
+        </div>
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(12)" tabindex="0"
+          aria-label="Charcoal portrait">
+          <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&q=80"
+            alt="Charcoal portrait of a woman" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Charcoal portrait — Arjun's class</span></div>
+        </div>
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(13)" tabindex="0"
+          aria-label="Group mural project">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80"
+            alt="Group project mural in progress" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Community mural project</span></div>
+        </div>
+        <div class="gallery-item reveal" role="listitem" onclick="openLightbox(14)" tabindex="0"
+          aria-label="Teen student painting">
+          <img src="/images/img10.webp" alt="Teen student focused on her acrylic painting" loading="lazy" />
+          <div class="gallery-overlay"><span class="gallery-caption">Creative Captures</span></div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:2.5rem">
+        <a href="https://www.instagram.com/creative_artacademy2026" target="_blank" rel="noopener noreferrer"
+          class="btn btn-outline" style="color:var(--cream);border-color:rgba(245,245,240,0.4)"
+          aria-label="View more on Instagram">
+          View more on Instagram ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">✕</button>
+    <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)" aria-label="Previous image">&#8249;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+    <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)" aria-label="Next image">&#8250;</button>
+  </div>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <!-- <section id="testimonials" class="section-pad">
+    <div class="container">
+      <span class="section-label">What students say</span>
+      <h2>Straight from the Studio</h2>
+
+      <div class="testi-grid" style="margin-top:2.5rem">
+        <div class="testi-card reveal">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">I hadn't touched a paintbrush since school. Priya made me feel like I'd been painting my
+            whole life by the second class.</p>
+          <div class="stars">★★★★★</div>
+          <div class="testi-author">Sravani K.</div>
+          <div class="testi-detail">Adult Watercolour student, 2025</div>
+        </div>
+        <div class="testi-card reveal reveal-delay-1">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">My daughter looks forward to Saturdays more than anything now. She's seven and she talks
+            about colour theory at dinner. I'm honestly a bit jealous.</p>
+          <div class="stars">★★★★★</div>
+          <div class="testi-author">Ravi Teja P.</div>
+          <div class="testi-detail">Parent, Kids Drawing class</div>
+        </div>
+        <div class="testi-card reveal reveal-delay-2">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">The mixed media workshop broke every rule I thought I knew about "good art." Now my
+            house looks like a very intentional fever dream.</p>
+          <div class="stars">★★★★★</div>
+          <div class="testi-author">Deepika M.</div>
+          <div class="testi-detail">Mixed Media student, 2025</div>
+        </div> -->
+  <!-- <div class="testi-card reveal reveal-delay-3">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">Arjun's sketchbook class changed how I see the city. I notice light differently now.
+            That's worth any amount of paint-stained shirts.</p>
+          <div class="stars">★★★★☆</div>
+          <div class="testi-author">Farrukh A.</div>
+          <div class="testi-detail">Sketchbook Journaling, 2026</div>
+        </div> -->
+  <!-- </div>
+    </div>
+  </section> -->
+
+  <div class="divider"></div>
+
+  <!-- ========== ENROLL ========== -->
+  <section id="enroll" class="section-pad">
+    <div class="container">
+      <div class="enroll-wrap">
+        <div class="enroll-perks reveal">
+          <span class="section-label" style="color:rgba(245,245,240,0.75)">Ready to start?</span>
+          <h2 style="color:var(--white)">Join the Academy</h2>
+          <p style="color:rgba(245,245,240,0.85);margin-top:0.5rem;margin-bottom:1.5rem">All materials included. No
+            experience needed. Just bring yourself and a little curiosity.</p>
+
+          <ul class="perk-list">
+            <li>All art materials provided in the session fee</li>
+            <li>Small batch sizes — never more than 10 students</li>
+            <li>Flexible scheduling — weekday &amp; weekend slots</li>
+            <li>Free trial class for first-timers</li>
+            <li>Take your work home after every session</li>
+            <li>Online classes coming soon for outstation students</li>
+          </ul>
+
+          <blockquote style="margin-top:2rem;border-left:3px solid rgba(245,245,240,0.3);padding-left:1rem">
+            <p class="hand-lg" style="color:rgba(245,245,240,0.9);font-style:italic">"You don't have to be good at art.
+              You just have to be willing to try."</p>
+            <footer style="margin-top:0.4rem;font-size:0.85rem;color:rgba(245,245,240,0.55)">— Lakkapathni Bhagavan,
+              Founder
+            </footer>
+          </blockquote>
+        </div>
+
+        <!-- Form -->
+        <div class="enroll-form-box reveal reveal-delay-1">
+          <h3 style="color:var(--white);margin-bottom:1.2rem;font-size:1.2rem">Reserve Your Spot</h3>
+          <form id="enrollForm" novalidate>
+            <div class="form-group">
+              <label for="enroll-name">Your Name</label>
+              <input type="text" id="enroll-name" name="name" placeholder="e.g. Ananya Reddy" autocomplete="name"
+                required aria-required="true" />
+              <div class="form-error" id="name-error">Please enter your name</div>
+            </div>
+            <div class="form-group">
+              <label for="enroll-email">Email Address</label>
+              <input type="email" id="enroll-email" name="email" placeholder="yourname@email.com" autocomplete="email"
+                required aria-required="true" />
+              <div class="form-error" id="email-error">Please enter a valid email</div>
+            </div>
+            <div class="form-group">
+              <label for="enroll-phone">Phone Number</label>
+              <input type="tel" id="enroll-phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="enroll-class">Class Interest</label>
+              <select id="enroll-class" name="class" required aria-required="true">
+                <option value="">— Choose a class —</option>
+                <option value="kids-drawing">Kids Drawing &amp; Colour (₹1499)</option>
+                <option value="adult-watercolour">Drawing & Painting (₹2499)</option>
+                <option value="teen-acrylic">Advanced Drawing , Shading & Painting... (₹2999)</option>
+                <option value="sketchbook">Fine Arts Course... (₹3499)</option>
+                <!-- <option value="mixed-media">Mixed Media Exploration (₹900)</option> -->
+                <option value="family">Family Creative Workshop (₹1200)</option>
+              </select>
+              <div class="form-error" id="class-error">Please select a class</div>
+            </div>
+            <div class="form-group">
+              <label for="enroll-msg">Anything you'd like us to know?</label>
+              <textarea id="enroll-msg" name="message" rows="3"
+                placeholder="Age of student, prior experience, scheduling preferences..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-whatsapp"
+              style="width:100%;justify-content:center;padding:0.9rem;font-size:1rem;display:flex;align-items:center;gap:0.6rem;border-radius:8px;border:none;cursor:pointer;font-family:var(--font-head);font-weight:600;letter-spacing:0.04em;"
+              aria-label="Send enrollment via WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              Confirm via WhatsApp
+            </button>
+            <p style="color:rgba(245,245,240,0.5);font-size:0.8rem;text-align:center;margin-top:0.7rem">We'll confirm
+              your slot &amp; share payment details on WhatsApp</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="section-pad">
+    <div class="container">
+      <span class="section-label">Find us</span>
+      <h2>Come Say Hello</h2>
+      <p class="sub-head" style="margin-top:0.4rem">We're in Banjara Hills, Hyderabad. The studio smells of paint and
+        good chai.</p>
+
+      <div class="contact-grid" style="margin-top:2.5rem">
+        <div>
+          <!-- Map embed -->
+          <div class="map-embed">
+            <iframe title="Creative Art Academy location on map" width="100%" height="100%" style="border:0"
+              loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=78.4667%2C17.3650%2C78.5067%2C17.4050&layer=mapnik&marker=17.40389960481075%2C78.39186206457978"
+              aria-label="Map showing Creative Art Academy location in Hyderabad">
+            </iframe>
+          </div>
+
+          <!-- Contact info -->
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div class="contact-info-text">
+                <strong>Address</strong>
+                633, opposite to ayur Mitra store, OU Colony, Shaikpet, Hyderabad, Telangana 500104
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z" />
+                </svg>
+              </div>
+              <div class="contact-info-text">
+                <strong>Phone</strong>
+                +91 85558 14585 , +91 89773 02904
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div class="contact-info-text">
+                <strong>Email</strong>
+                creativeartacademy26@gmail.com
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <div class="contact-info-text">
+                <strong>Studio Hours</strong>
+                Tue-Thu-Fri 6:30pm–9pm &nbsp;|&nbsp; Sat–Sun 2:30pm–9pm
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="reveal">
+          <h3 style="margin-bottom:1rem;font-size:1.2rem">Send a Message</h3>
+          <form id="contactForm" novalidate class="contact-form contact-fg">
+            <input type="text" name="contact-name" placeholder="Your name" required aria-label="Your name"
+              autocomplete="name" />
+            <input type="email" name="contact-email" placeholder="Your email" required aria-label="Your email"
+              autocomplete="email" />
+            <input type="text" name="contact-subject" placeholder="Subject" aria-label="Subject" />
+            <textarea name="contact-message" rows="5" placeholder="Your message..." required
+              aria-label="Your message"></textarea>
+            <button type="submit" class="btn btn-primary" aria-label="Send message">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h3>Creative Art Academy</h3>
+          <p>A warm, slightly chaotic studio in Hyderabad where paint meets purpose and everyone leaves a little more
+            creative than they arrived.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/creative_artacademy2026" target="_blank" rel="noopener noreferrer"
+              aria-label="Follow us on Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Find us on Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Watch us on YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Classes</h4>
+          <ul>
+            <li><a href="#classes">Kids Drawing &amp; Colour</a></li>
+            <li><a href="#classes">Adult Watercolour</a></li>
+            <li><a href="#classes">Teen Acrylic Studio</a></li>
+            <li><a href="#classes">Sketchbook Journaling</a></li>
+            <li><a href="#classes">Mixed Media</a></li>
+            <li><a href="#classes">Family Workshop</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Creative Art Academy, Hyderabad. All rights reserved.</span>
+        <!-- <span>Made with <span style="color:var(--terracotta)">♥</span> and a lot of paint</span> -->
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== ENROLL MODAL ========== -->
+  <div class="modal-overlay" id="enrollModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close enrollment form">✕</button>
+      <h3 id="modal-title">Enroll in a Class</h3>
+      <div class="modal-class-info" id="modal-class-info"></div>
+
+      <form id="modalForm" novalidate>
+        <div class="modal-fg">
+          <label for="m-name">Full Name</label>
+          <input type="text" id="m-name" placeholder="Your name" required autocomplete="name" aria-required="true" />
+        </div>
+        <div class="modal-fg">
+          <label for="m-email">Email</label>
+          <input type="email" id="m-email" placeholder="yourname@email.com" required autocomplete="email"
+            aria-required="true" />
+        </div>
+        <div class="modal-fg">
+          <label for="m-phone">Phone</label>
+          <input type="tel" id="m-phone" placeholder="+91 98765 43210" autocomplete="tel" />
+        </div>
+        <div style="margin-top:1.2rem">
+          <button type="submit" class="btn"
+            style="width:100%;padding:0.9rem;font-size:1rem;background:#25D366;color:white;border-radius:8px;border:none;cursor:pointer;font-family:var(--font-head);font-weight:600;display:flex;align-items:center;justify-content:center;gap:0.6rem;"
+            aria-label="Confirm enrollment via WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Confirm via WhatsApp
+          </button>
+          <p style="font-size:0.78rem;color:var(--taupe);text-align:center;margin-top:0.6rem">Opens WhatsApp with your
+            details pre-filled. We'll confirm &amp; share payment info.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- ========== JS ========== -->
+  <script>
+    // ---- Nav scroll behaviour ----
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ---- Mobile hamburger ----
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      const expanded = navLinks.classList.contains('open');
+      hamburger.setAttribute('aria-expanded', expanded);
+    });
+    // Close on link click
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // ---- Scroll reveal ----
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // ---- Gallery data ----
+    const galleryData = [
+      { src: 'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=1200&q=85', caption: 'Botanical study — watercolour' },
+      { src: 'https://images.unsplash.com/photo-1547826039-a55c6fb6f5a8?w=1200&q=85', caption: 'Abstract burst — age 8' },
+      { src: 'https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=1200&q=85', caption: 'Pencil portrait study' },
+      { src: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&q=85', caption: 'Sunset landscape — acrylic' },
+      { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85', caption: 'Mixed media collage' },
+      { src: 'https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1200&q=85', caption: 'Saturday studio session' },
+      { src: 'https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=1200&q=85', caption: 'Figure study — ink brush' },
+      { src: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1200&q=85', caption: 'Sketchbook journal' },
+      { src: 'https://images.unsplash.com/photo-1503455637927-730bce8583c0?w=1200&q=85', caption: 'Still life — oil on canvas' },
+      { src: 'https://images.unsplash.com/photo-1547226706-cd7b3b91b79d?w=1200&q=85', caption: 'Kids workshop — Saturday' },
+      { src: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&q=85', caption: 'Expression series — adult class' },
+      { src: 'https://images.unsplash.com/photo-1502781252888-9143ba7f074e?w=1200&q=85', caption: 'Floral illustration — pencil' },
+      { src: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&q=85', caption: 'Charcoal portrait' },
+      { src: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=1200&q=85', caption: 'Community mural project' },
+      { src: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=1200&q=85', caption: 'Teen acrylic — in progress' },
+    ];
+
+    let currentImg = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const lbCaption = document.getElementById('lightbox-caption');
+
+    function openLightbox(idx) {
+      currentImg = idx;
+      lbImg.src = galleryData[idx].src;
+      lbImg.alt = galleryData[idx].caption;
+      lbCaption.textContent = galleryData[idx].caption;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lightboxNav(dir) {
+      currentImg = (currentImg + dir + galleryData.length) % galleryData.length;
+      lbImg.style.opacity = 0;
+      setTimeout(() => {
+        lbImg.src = galleryData[currentImg].src;
+        lbImg.alt = galleryData[currentImg].caption;
+        lbCaption.textContent = galleryData[currentImg].caption;
+        lbImg.style.opacity = 1;
+      }, 150);
+    }
+    lbImg.style.transition = 'opacity 0.2s';
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lightboxNav(-1);
+      if (e.key === 'ArrowRight') lightboxNav(1);
+    });
+    // Keyboard support for gallery items
+    document.querySelectorAll('.gallery-item').forEach((item, i) => {
+      item.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); } });
+    });
+
+    // ---- Modal ----
+    function openModal(className, price) {
+      document.getElementById('modal-class-info').textContent = className + ' — ' + price + ' per session';
+      document.getElementById('enrollModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('m-name').focus();
+    }
+    function closeModal() {
+      document.getElementById('enrollModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('enrollModal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('enrollModal')) closeModal();
+    });
+
+    // ---- Toast ----
+    function showToast(msg, type = 'success') {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast ' + type + ' show';
+      setTimeout(() => t.classList.remove('show'), 3800);
+    }
+
+    // ---- YOUR WHATSAPP NUMBER (change this to your real number) ----
+    // Format: country code + number, NO spaces or + sign
+    // India example: 919876543210  (91 = India, then your 10-digit number)
+    const WHATSAPP_NUMBER = '918555814585';
+
+    function openWhatsApp(name, email, phone, className, extra) {
+      const msg = [
+        `Hi! I'd like to enroll at Creative Art Academy 2026 🎨`,
+        ``,
+        `*Class:* ${className}`,
+        `*Name:* ${name}`,
+        `*Email:* ${email}`,
+        phone ? `*Phone:* ${phone}` : '',
+        extra ? `*Note:* ${extra}` : '',
+        ``,
+        `Please confirm my slot and share payment details. Thank you!`
+      ].filter(Boolean).join('\n');
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    }
+
+    // ---- Form validation ----
+    function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+    // Enroll section form
+    document.getElementById('enrollForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('enroll-name').value.trim();
+      const email = document.getElementById('enroll-email').value.trim();
+      const phone = document.getElementById('enroll-phone').value.trim();
+      const cls = document.getElementById('enroll-class');
+      const extra = document.getElementById('enroll-msg').value.trim();
+      const classText = cls.options[cls.selectedIndex]?.text || '';
+
+      document.getElementById('name-error').classList.toggle('show', !name);
+      document.getElementById('email-error').classList.toggle('show', !validateEmail(email));
+      document.getElementById('class-error').classList.toggle('show', !cls.value);
+
+      if (!name || !validateEmail(email) || !cls.value) return;
+
+      openWhatsApp(name, email, phone, classText, extra);
+      showToast('✓ Opening WhatsApp… See you in the studio! 🎨');
+      this.reset();
+    });
+
+    // Modal form
+    document.getElementById('modalForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('m-name').value.trim();
+      const email = document.getElementById('m-email').value.trim();
+      const phone = document.getElementById('m-phone').value.trim();
+      const className = document.getElementById('modal-class-info').textContent;
+
+      if (!name || !validateEmail(email)) {
+        showToast('Please fill in your name and email.');
+        return;
+      }
+
+      closeModal();
+      openWhatsApp(name, email, phone, className, '');
+      showToast('✓ Opening WhatsApp… We\'ll confirm your spot shortly! 🎨');
+      this.reset();
+    });
+
+    // Contact form
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const inputs = this.querySelectorAll('input[required], textarea[required]');
+      let valid = true;
+      inputs.forEach(i => { if (!i.value.trim()) valid = false; });
+      if (!valid) { showToast('Please fill in all required fields.'); return; }
+      showToast('✓ Message sent! We\'ll get back to you within 24 hours.');
+      this.reset();
+    });
+
+    // ---- Active nav highlight on scroll ----
+    const sections = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+    const scrollSpy = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navAnchors.forEach(a => a.classList.remove('active'));
+          const match = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+          if (match) match.style.color = 'var(--terracotta)';
+          else navAnchors.forEach(a => a.style.color = '');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(s => scrollSpy.observe(s));
+  </script>
+
+</body>
+
+</html>
